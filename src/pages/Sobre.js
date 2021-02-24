@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 class Sobre extends React.Component {
   render() {
@@ -10,8 +10,7 @@ class Sobre extends React.Component {
     );
   }s
 }
-Sobre.propTypes = {
-  addCart: PropTypes.func.isRequired,
-};
+// Sobre.propTypes = {
+// };
 
 export default Sobre;

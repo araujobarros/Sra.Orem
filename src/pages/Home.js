@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 class Home extends React.Component {
   render() {
@@ -10,8 +10,7 @@ class Home extends React.Component {
     );
   }
 }
-Home.propTypes = {
-  addCart: PropTypes.func.isRequired,
-};
+// Home.propTypes = {
+// };
 
 export default Home;
