@@ -1,7 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCoffee, faHome, faBug, faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { faInstagramSquare, faFacebookSquare, faWhatsappSquare } from '@fortawesome/free-brands-svg-icons'
+import ChefHat from './ChefHat';
+import logo from './imgs/logo_cortado_2.png'
 
+
+// import PropTypes from 'prop-types';
 class Navbar extends React.Component {
   constructor () {
     super ();
@@ -17,33 +23,38 @@ ativate = () => {
   this.setState ({
     isActive: false,
     classBurger: "navbar-burger",
-    classMenu: "navbar-menu"
+    classMenu: "navbar-menu",
   }) :
   this.setState ({
     isActive: true,
     classBurger: "navbar-burger is-active",
-    classMenu: "navbar-menu is-active"
+    classMenu: "navbar-menu is-active",
   })
 }
 
   render() {
     return (
       <header>
-          <nav className="navbar" role="navigation" aria-label="main navigation">
-        <div className="navbar-brand">
-            <h1 className="navbar-item">Sra. Orem</h1>
-            {/* Aqui eu posso colocar o caminho do Home no logo */}
-            {/* <a className="navbar-item" href="https://bulma.io">
-            <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28" />
-            </a> */}
- 
-            <a role="button" className={this.state.classBurger} aria-label="menu" aria-expanded="false" data-target="navbarBasicExample"
-            onClick={this.ativate}>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-            </a>
-        </div>
+        <nav className="navbar" role="navigation" aria-label="main navigation">
+            <div className="navbar-brand">
+                <Link
+                    to={ {
+                      pathname: "/",
+                    } }
+                  >
+                    <img
+                    src={logo}
+                    alt="logo Sra Orem"
+                    width="150"
+                    height="40" />
+                </Link>
+                <a role="button" className={this.state.classBurger} aria-label="menu" aria-expanded="false" data-target="navbarBasicExample"
+                onClick={this.ativate}>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
 
         <div id="navbarBasicExample" className={this.state.classMenu}>
             <div className="navbar-start">
@@ -52,14 +63,26 @@ ativate = () => {
                 to={ {
                   pathname: "/",
                 } }
-              >Home
+              >
+                <span class="icon-text">
+                    <span class="icon">
+                    <FontAwesomeIcon icon={faHome} />
+                    </span>
+                    <span> Home</span>
+                  </span>
             </Link>
             <Link
                 className="navbar-item"
                   to={ {
                     pathname: "/Cardapio",
                   } }
-                >Cardapio
+                >
+                  <span class="icon-text">
+                    <span class="icon">
+                    <FontAwesomeIcon icon={faCoffee} />
+                    </span>
+                    <span> Cardápio</span>
+                  </span>
               </Link>
 
             <div className="navbar-item has-dropdown is-hoverable">
@@ -72,25 +95,49 @@ ativate = () => {
                             to={ {
                             pathname: "/Sobre",
                             } }
-                        >Sobre
+                        >
+                           <span class="icon-text">
+                            <span class="icon">
+                              <ChefHat />
+                            </span>
+                            <span>Sobre</span>
+                          </span>
                     </Link>
                     <Link
                         className="navbar-item"
                             to={ {
                             pathname: "/Contatos",
                             } }
-                        >Contatos
+                        >
+                          <span class="icon-text">
+                            <span class="icon">
+                              <FontAwesomeIcon icon={faEnvelope} />
+                            </span>
+                            <span> Contatos</span>
+                          </span>
                     </Link>
                     <hr className="navbar-divider" />
                     <a className="navbar-item">
-                        Report an issue
+                      <span class="icon-text">
+                        <span class="icon">
+                          <FontAwesomeIcon icon={faBug} />
+                        </span>
+                      <span> Reporte um erro</span>
+                  </span>
                     </a>
                 </div>
             </div>
             </div>
 
             <div className="navbar-end">
-            <div className="navbar-item">
+              <div className="navbar-item">
+                <span class="buttons">
+                  <FontAwesomeIcon class="button is-primary" icon={faInstagramSquare} size="3x"/>
+                  <FontAwesomeIcon class="button is-primary" icon={faFacebookSquare} size="3x"/>
+                  <FontAwesomeIcon class="button is-primary" icon={faWhatsappSquare} size="3x"/>
+                </span>
+              </div>
+            {/* <div className="navbar-item">
                 <div className="buttons">
                 <a className="button is-primary">
                     <strong>Sign up</strong>
@@ -99,7 +146,7 @@ ativate = () => {
                     Log in
                 </a>
                 </div>
-            </div>
+            </div> */}
             </div>
         </div>
         </nav>
