@@ -6,6 +6,7 @@ import { faInstagramSquare, faFacebookSquare, faWhatsappSquare } from '@fortawes
 import ChefHat from './ChefHat';
 import logo from './imgs/logo_cortado_2.png'
 
+//Navbar finalizada
 
 // import PropTypes from 'prop-types';
 class Navbar extends React.Component {
