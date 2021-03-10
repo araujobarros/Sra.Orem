@@ -3,19 +3,16 @@ import { Route, Switch } from 'react-router-dom';
 
 import Home from './pages/Home';
 import Menu from './pages/Menu';
-import Sobre from './pages/Sobre';
+import About from './pages/About';
 import './App.sass';
 import './App.css';
 import Contacts from './pages/Contacts';
 import Navbar from './Components/NavBar';
 import DataProvider from './context/DataProvider';
 
-
-class App extends React.Component {
-  
-  render() {
-    return (
-      <DataProvider>
+function App() {
+  return (
+    <DataProvider>
         <div>
         <Navbar />
           <Switch>
@@ -38,9 +35,9 @@ class App extends React.Component {
               ) }
             /> */}
             <Route
-              path="/Sobre"
+              path="/About"
               render={ (props) => (
-                <Sobre
+                <About
                 className="components"
                 { ...props }
                 />
@@ -83,10 +80,6 @@ class App extends React.Component {
         
       </div>
       </DataProvider>
-      
-    );
-  }
+  )
 }
-
 export default App;
-

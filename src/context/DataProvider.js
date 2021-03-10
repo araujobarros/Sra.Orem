@@ -1,27 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import DataContext from './DataContext';
 import products from '../services/productsData';
 
-class DataProvider extends React.Component {
-  constructor() {
-    super();
+function DataProvider( { children }) {
 
-    this.state = {
-      productsData: products
-    };
+  const [productsData] = useState(products)
+  const contextValue = {
+    productsData
   }
 
-  
-  render() {
-    const { children } = this.props;
-    return (
-      <DataContext.Provider
-        value={ { ...this.state } }
+  return (
+    <DataContext.Provider
+        value={{...contextValue}} 
       >
         {children}
       </DataContext.Provider>
-    );
-  }
+  )
 }
 
 export default DataProvider;

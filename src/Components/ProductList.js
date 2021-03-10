@@ -1,25 +1,22 @@
 import React from 'react';
+import { useContext } from 'react';
 import DataContext from '../context/DataContext';
+import ProductCard from './ProductCard';
 // import PropTypes from 'prop-types';
 // import { Link } from 'react-router-dom';
 
-class ProductList extends React.Component {
-  render() {
-    
-    return (
-      <DataContext.Consumer>
-        {( { productsData }) => (
-          <div>
-            <div>Aqui será feito um map com as informações do produto cedidas por apicontext</div>
-            {productsData.map(product => 
-              (<div> {product.group} </div>)
-            )}
-          </div>
-        )}
-      </DataContext.Consumer>
-      
-    );
-  }
+
+function ProductList() {
+
+  const { productsData } = useContext(DataContext)
+  return (
+    <div>
+      <div>Aqui será feito um map com as informações do produto cedidas por apicontext</div>
+      {productsData.map(product => 
+        (<ProductCard exemploProps= {product.group}/>)
+      )}
+    </div>
+  )
 }
 
 // ProductList.propTypes = {

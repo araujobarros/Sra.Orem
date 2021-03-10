@@ -2,13 +2,10 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 // import { Link } from 'react-router-dom';
 
-class ProductCard extends React.Component {
-  render() {
-    
-    return (
-      <div>Aqui ficará o card do produto com as informações de cada produto passada por props</div>
-    );
-  }
+function ProductCard( { exemploProps }) {
+  return (
+    <div>{exemploProps}</div>
+  );
 }
 
 // ProductCard.propTypes = {

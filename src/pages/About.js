@@ -1,15 +1,15 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
 
-function Home() {
+function About() {
   return (
     <div>
-      Aqui ficará a Home
+      Aqui ficará a Sobre
     </div>
   );
 }
 
-// Home.propTypes = {
+// Sobre.propTypes = {
 // };
 
-export default Home;
+export default About;
