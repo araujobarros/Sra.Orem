@@ -1,4 +1,5 @@
 import React from 'react';
+import ProductList from '../Components/ProductList';
 // import PropTypes from 'prop-types';
 
 class Menu extends React.Component {
@@ -6,6 +7,7 @@ class Menu extends React.Component {
     return (
       <div>
         Aqui ficará o Cardápio
+        <ProductList />
       </div>
     );
   }

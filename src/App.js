@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 import Home from './pages/Home';
 import Menu from './pages/Menu';
@@ -8,12 +8,15 @@ import './App.sass';
 import './App.css';
 import Contacts from './pages/Contacts';
 import Navbar from './Components/NavBar';
+import DataProvider from './context/DataProvider';
+
 
 class App extends React.Component {
   
   render() {
     return (
-      <div>
+      <DataProvider>
+        <div>
         <Navbar />
           <Switch>
             <Route
@@ -79,6 +82,8 @@ class App extends React.Component {
           </Switch>
         
       </div>
+      </DataProvider>
+      
     );
   }
 }
