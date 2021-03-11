@@ -4,7 +4,7 @@ import React from 'react';
 
 function ProductCard( { exemploProps }) {
   return (
-    <div>{exemploProps}</div>
+    <div>{exemploProps.title}</div>
   );
 }
 

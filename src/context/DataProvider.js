@@ -5,8 +5,15 @@ import products from '../services/productsData';
 function DataProvider( { children }) {
 
   const [productsData] = useState(products)
+  const [productsFromMLB, setProducts] = useState([])
+  const [isLoad, setLoad] = useState(false)
+
   const contextValue = {
-    productsData
+    productsData,
+    productsFromMLB,
+    isLoad,
+    setProducts,
+    setLoad
   }
 
   return (
